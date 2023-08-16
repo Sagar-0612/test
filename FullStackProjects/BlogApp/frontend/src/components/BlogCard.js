@@ -31,8 +31,11 @@ export default function BlogCard({
     try {
       const { data } = await axios.delete(`/blog/delete-blog/${id}`);
       if (data?.success) {
-       toast.success(`Blog ${id} deleted successfully`)
-        window.location.reload();
+       toast.success(`Blog deleted successfully`)
+       console.log(data)
+       window.location.reload();
+      //  navigate("/my-blogs");
+        
       }
     } catch (error) {
       console.log(error);
